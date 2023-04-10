@@ -1,0 +1,22 @@
+
+/* 
+.headerPrueba{
+  width: 100% ;
+  background-color: lightgray;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;  
+  /* align-self: flex-start !important; */
+  /* padding: 0px !important; */
+ 
+
+
+  .header{
+    background-color: lightsalmon;
+    grid-area: header;
+  }
+
+
+

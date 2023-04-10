@@ -1,5 +1,39 @@
-main {
-  background-color: #E5E7E9;
-  min-height: 72vh;  
-  
+
+
+/* .header {
+  background-color: lightcoral !important;
+  grid-area: header;
+} */
+
+.main {
+  background-color: lightgreen;
+  grid-area: main;
 }
+
+.app-conteiner {
+  display: grid;
+  min-height: 100vh;
+  background-color: lightblue;
+  grid-template-rows: 100px auto 100px;
+  grid-template-areas:
+    "header" 
+    "main"  
+    "footer";
+}
+/* 
+.conteiner-app {
+  background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  
+} */
+
+
+/* 
+footer {
+  align-self: flex-end !important;
+  background-color: aqua !important;
+  width: 100% ;
+} */

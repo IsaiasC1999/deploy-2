@@ -1,8 +1,8 @@
 .conteinerhome {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   background-color: aqua;
-  min-height: 75vh;
-  
+  width: 80%;
+  margin: auto; */
 }
