@@ -1,111 +1,90 @@
-import './Form.module.css';
+import './Form.css';
 import { useForm } from 'react-hook-form';
 
-const Form = () => {
+const Form = ({ closeRegister }) => {
 
     const { register, setValue, formState: { errors }, handleSubmit } = useForm()
 
-    const onSubmit = () => {
-        console.log(register)
+    const onSubmit = data => {
+        console.log(data)
     }
 
     return (
-        <div className='form'>
-            <form action="">
-                <h3>Registrar</h3>
-                <div>
-                    <label htmlFor="">Nombre</label>
-                    <input type="text"
-                        {
-                        ...register('nombre', {
+        <div>
+            <form action="" onSubmit={handleSubmit(onSubmit)} >
+                <div className="text-center pt-3">
+                    <h3>Registrate</h3>
+                </div>
+                <div className='input-group input-group-sm mb-3'>
+                    <label htmlFor="" className='input-group-text'>Nombre:</label>
+                    <input
+                        className="form-control"
+                        type="text"
+                        {...register('nombre', {
                             required: true,
-                            minLength: 3
-                        })
-                        }
-                    />
-                    {errors.nombre?.type === 'required' && <p>El campo nombre es obligatorio</p>}
-                    {errors.nombre?.type === 'maxLength' && <p>El campo nombre debe tener más caracteres</p>}
+                            pattern: /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ].{2,30}$/
+                        })} />
+                    {errors.nombre?.type === 'required' && <p className='form-text px-1'>El campo nombre es requerido</p>}
                 </div>
-                <div>
-                    <label htmlFor="">Apellido</label>
-                    <input type="text" 
-                        {
-                            ...register('apellido',{
-                                required:true,
-                                minLength: 3
-                            })
-                        }
-                    />
-                    {errors.apellido?.type === 'required' && <p>El campo apellido es obligatorio</p>}
-                    {errors.apellido?.type === 'minLength' && <p>El campo debe tener al menos 3 letras</p>}
+                <div className='input-group input-group-sm mb-3'>
+                    <label htmlFor="" className='input-group-text'>Apellido:</label>
+                    <input
+                        className="form-control"
+                        type="text"
+                        {...register('apellido', {
+                            required: true,
+                            pattern: /^[ a-zA-ZñÑáéíóúÁÉÍÓÚ].{2,30}$/
+                        })} />
+                    {errors.apellido?.type === 'required' && <p className='form-text px-1'>El campo apellido es requerido</p>}
                 </div>
-                <div>
-                    <label htmlFor="">DNI</label>
-                    <input type='text' 
-                        {
-                            ...register('dni',{
-                                required: true,
-                                minLength: 7
-                            })
-                        }
-                    />
-                    {errors.dni?.type === 'required' && <p>El campo DNI es obligatorio</p>}
-                    {errors.dni?.type === 'minLength' && <p>El campo debe tener al menos 8 numeros</p>}
+                <div className='input-group input-group-sm mb-3'>
+                    <label className='input-group-text'>Email:</label>
+                    <input
+                        className="form-control"
+                        type="text" {...register('email', {
+                            pattern: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+                        })} />
+                    {errors.email?.type === 'pattern' && <p className='form-text px-1'>El formato del email es incorrecto</p>}
                 </div>
-                <div>
-                    <label htmlFor="">Telefono</label>
-                    <input type='number' 
-                        {
-                            ...register('number',{
-                                required: true,
-                                minLength: 7
-                            })
-                        }
-                    />
-                    {errors.number?.type === 'required' && <p>El campo Telefono es obligatorio</p>}
-                    {errors.number?.type === 'minLength' && <p>El campo debe tener al menos 8 numeros</p>}
+                <div className='input-group input-group-sm mb-3'>
+                    <label className='input-group-text'>Teléfono:</label>
+                    <input className="form-control" type="number" {...register('telefono', {
+                        pattern: /^[0-9].{7,10}$/
+                    })} />
                 </div>
-                <div>
-                    <label htmlFor="">Email</label>
-                    <input type='email' 
-                        {
-                            ...register('email',{
-                                pattern: "",
-                                required: true,
-                                minLength: 7
-                            })
-                        }
-                    />
-                    {errors.email?.type === 'required' && <p>El campo Email es obligatorio</p>}
-                    {errors.email?.type === 'minLength' && <p>El campo debe tener al menos 8 numeros</p>}
+                <div className='input-group input-group-sm mb-3'>
+                    <label className='input-group-text'>DNI:</label>
+                    <input
+                        className="form-control"
+                        type="text" {...register('dni', {
+                            pattern: /^[0-9].{6,10}$/
+                        })} />
+                    {errors.dni && <p className='form-text px-1'>Ingresar solo números</p>}
                 </div>
-                <div>
-                    <label htmlFor="">Contraseña</label>
-                    <input type='password' 
-                        {
-                            ...register('pwd',{
-                                required: true,
-                                minLength: 7
-                            })
-                        }
-                    />
-                    {errors.pwd?.type === 'required' && <p>El campo Contraseña es obligatorio</p>}
-                    {errors.pwd?.type === 'minLength' && <p>El campo debe tener al menos 8 numeros</p>}
+                <div className='input-group input-group-sm mb-3'>
+                    <label className='input-group-text'>Contraseña:</label>
+                    <input
+                        className="form-control"
+                        type="password" {...register('contraseña', {
+                            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
+                        })} />
+                    {errors.contraseña?.type === 'pattern' && <p className='form-text'>Incluir mayusculas y minusculas, números y un caracter especial. <br /> Caracteres permitidos: @ # $ % !</p>}
                 </div>
-                <div>
-                    <label htmlFor="">Confirmar Contraseña</label>
-                    <input type='password' 
-                        {
-                            ...register('cpwd',{
-                                required: true,
-                                minLength: 7
-                            })
-                        }
-                    />
-                    {errors.cpwd?.type === 'required' && <p>El campo es obligatorio</p>}
-                    {errors.cpwd?.type === 'minLength' && <p>El campo debe tener al menos 8 numeros</p>}
+                <div className='input-group input-group-sm mb-3'>
+                    <label className='input-group-text'>Confirmar contraseña:</label>
+                    <input
+                        className="form-control"
+                        type="password" {...register('confirma', {
+                            pattern: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
+                        })} />
+                    {/* {errors.confirma?.type === errors.contraseña?.type && <p className='form-text px-1'>Debe repetir la contraseña</p>} */}
                 </div>
-                <button onClick={handleSubmit(onSubmit)}>Enviar</button>
+
+                {/* <input type="submit" value="Enviar" /> */}
+                <div className="input-group mb-3 d-flex justify-content-center">
+                    <button className="btn btn-outline-secondary" type="submit" value="Enviar" id="button-addon1" >Registrarte</button>
+                    <button className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={closeRegister}>Regresar</button>
+                </div>
             </form>
         </div>
     )
