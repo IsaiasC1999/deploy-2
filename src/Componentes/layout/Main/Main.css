@@ -1,6 +1,6 @@
 .main-app{
   grid-area: main ;
-  background-color: lightgreen;
+  background-color: lightcoral;
   display: flex;
   justify-content: center;
   align-items: center;
