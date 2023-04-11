@@ -1,5 +1,24 @@
-main {
-  background-color: #E5E7E9;
-  min-height: 72vh;  
+
+.app-conteiner {
+  display: grid;
+  min-height: 95vh;
+  background-color: lightblue;
   
+  grid :
+    
+    "main" 1fr 
+    "footer" 80px;
 }
+
+
+
+
+@media (max-width:600px){
+ 
+
+
+
+}
+
+
+

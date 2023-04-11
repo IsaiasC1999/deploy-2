@@ -1,5 +1,6 @@
 import React from 'react'
 import useLogin from './hook/useLogin'
+import './Login.css'
 
 const Login = ({ setOpenRegister }) => {
 
@@ -10,7 +11,7 @@ const Login = ({ setOpenRegister }) => {
 
     return (
         <div>
-            <div className="container d-flex border justify-content-center align-items-center" id="contenedor-ingreso">
+            <div className="container d-flex justify-content-center align-items-center" id="contenedor-ingreso">
                 <div className="container " id="formulario">
                     <form action="/auth" method="POST">
                         <div className="container w-100 text-center pt-3">
@@ -36,7 +37,7 @@ const Login = ({ setOpenRegister }) => {
                                 onChange={(e) => setContraseña(e.target.value)}
                             />
                         </div>
-                        <div className="input-group mb-3 d-flex justify-content-center">
+                        <div className="botones input-group mb-3 d-flex justify-content-center">
                             <button href="#" className="btn btn-outline-secondary" type="button" id="button-addon1" onClick={() => login()}>Ingresar</button>
                             <button href="#" className="btn btn-outline-secondary" type="button" id="button-addon2" onClick={openRegister}>Registrarte</button>
                         </div>

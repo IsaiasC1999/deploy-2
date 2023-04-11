@@ -1,25 +1,28 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './pages/home/Home';
-import Header from "./Componentes/Header/Header";
+import React from "react";
+import Header from "./Componentes/layout/Header/Header";
 import "./App.css"
-import Footer from "./Componentes/Footer/Footer";
+import Footer from "./Componentes/layout/Footer/Footer";
+import { Main } from "./Componentes/layout/Main/Main";
+import Home from './pages/home/Home'
+import Login from "./Componentes/Login/Login";
 
 function App() {
 
   return (
     <>
-      <Header />
-      <main>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />}/>   
-          </Routes>
-        </BrowserRouter>
-      </main>
-      <Footer />
-    </>
 
+      <Header />
+      <div className="app-conteiner">
+        <Main>
+          {/* Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, sit praesentium? Velit magnam vero vitae quidem voluptatum mollitia voluptate nesciunt modi earum omnis repellendus, perspiciatis doloremque eius iusto. Beatae, cumque. */}
+          {/* <Home /> */}
+          <Login></Login>
+        </Main>
+        <Footer />
+      </div>
+    </>
   );
 }
 
