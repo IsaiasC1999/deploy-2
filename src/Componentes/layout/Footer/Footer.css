@@ -1,9 +1,23 @@
 .footer-app{
+
   grid-area: footer;
-  background-color: lightcoral;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
+  text-align: center;
+  font-weight: 500;
+  background-color: #E5E8E8;
+}
+
+
+@media (min-width : 600px){
+
+  .footer-app{
+    font-size: 18px;
+    text-align: center;
+  }
+
 }
 
 

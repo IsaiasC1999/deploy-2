@@ -1,11 +1,10 @@
 
 .app-conteiner {
   display: grid;
-  min-height: 95vh;
+  min-height: 88vh;
   background-color: lightblue;
   
-  grid :
-    
+  grid :   
     "main" 1fr 
     "footer" 80px;
 }

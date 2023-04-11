@@ -14,7 +14,7 @@
 
 
   .header{
-    background-color: #ffff;
+    background-color: #E5E8E8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,8 +27,7 @@
     display: inline;
     text-align: center;
     font-size: 2px !important;
-    /* padding-left: 10px; */
-    margin-left: 30px;
+    
   }
 
  
@@ -51,7 +50,7 @@
   @media (min-width : 600px){
 
     .header{
-      background-color: #ffff;
+      background-color: #E5E8E8;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -66,7 +65,7 @@
     text-align: center;
     font-size: 50px !important;
     /* padding-left: 10px; */
-    margin-left: 30px;
+    margin-left: 20px;
   }
 
   .h2_titulo{
@@ -76,9 +75,6 @@
   .h5_titulo{
     font-size: 28px !important;
   }
-
-
-
 
     img {
       height: 120px;
