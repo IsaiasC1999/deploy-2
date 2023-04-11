@@ -1,0 +1,14 @@
+form {
+    height: auto;
+    background-color: white;
+    padding: 15px 90px 15px 90px;
+    border-radius: 5px;
+    text-align: center;
+    display: grid;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+    align-items: center;
+}
