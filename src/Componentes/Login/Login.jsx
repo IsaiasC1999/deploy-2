@@ -15,7 +15,7 @@ const Login = ({ setOpenRegister }) => {
                 <div className="container " id="formulario">
                     <form action="/auth" method="POST">
                         <div className="container w-100 text-center pt-3">
-                            <h3>Inicio de Sesión</h3>
+                            <h3 className='title-form'>Inicio de Sesión</h3>
                         </div>
                         <div className="input-group input-group-sm mb-3">
                             <label className="input-group-text" id="inputGroup-sizing-sm">Usuario</label>

@@ -1,11 +1,10 @@
 .main-app{
   grid-area: main ;
-  background-color: lightcoral;
+  background-color: #D5DBDB;
   display: flex;
   justify-content: center;
   align-items: center;
   /* padding: 5px 50px; */
-  
 }
 
 
