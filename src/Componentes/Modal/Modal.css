@@ -1,0 +1,100 @@
+.modal_register {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-header {
+    border: none !important;
+}
+
+.modal-success {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: #D1F66F;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    position: relative;
+    padding: 1rem;
+    min-width: 320px;
+    max-width: 480px;
+    min-height: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+    background-color: #fff;
+    text-align: center;
+}
+
+.modal-container-success {
+    position: relative;
+    padding: 1rem;
+    min-width: 320px;
+    max-width: 480px;
+    min-height: 200px;
+    max-height: 600px;
+    overflow-y: auto;
+    background-color: #8af15a;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.modal_register.is-open {
+    display: flex;
+}
+
+.modal-success.is-open {
+    display: flex;
+}
+
+/* Modal vencimiento ticket */
+
+.modal-content {
+    position: relative;
+    padding: 1px;
+    min-width: 320px;
+    max-width: 480px;
+    min-height: 220px;
+    max-height: 600px;
+    overflow-y: auto;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+
+}
+
+.modal-header-venci {
+    width: 100%;
+    height: 50px;
+    background-color: #fb4d44;
+    color: white;
+
+}
+
+.modal-header-venci h2 {
+    margin-top: 5px;
+}
+
+.p-modal {
+    margin-top: 30px;
+}
